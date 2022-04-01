@@ -7,6 +7,19 @@ const refs = {
   form: document.querySelector('.form'),
 };
 
+refs.delay.addEventListener('input', noMinus);
+refs.step.addEventListener('input', noMinus);
+refs.amount.addEventListener('input', noMinus);
+function noMinus() {
+  // Let's match only digits.
+  var num = this.value.match(/^\d+$/);
+  if (num === null) {
+    // If we have no match, value will be empty.
+    this.value = '';
+  }
+  false;
+}
+
 refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
