@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const inputEl = document.querySelector('#datetime-picker');
-const buttonEl = document.querySelector('button[datda-start');
+const buttonEl = document.querySelector('button[data-start');
 const timerDiv = document.querySelector('.timer');
 const daysEl = document.querySelector('span[data-days');
 const hoursEl = document.querySelector('span[data-hours]');
@@ -77,7 +77,7 @@ class Timer {
       minutesEl.textContent = components.minutes;
       hoursEl.textContent = components.hours;
       daysEl.textContent = components.days;
-      if (deltaTime <= 0) {
+      if (deltaTime < 0) {
         this.timerStop();
         timerDiv.innerHTML = 'Time is up';
       }
